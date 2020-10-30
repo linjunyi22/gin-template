@@ -86,7 +86,7 @@ func (t *Template) Run() {
 	}
 
 	errWrapper(t.createFile("", "README.md", ""))
-	errWrapper(t.createFile("", "main.go", mainStr))
+	errWrapper(t.createFile("", "main.go", fmt.Sprintf(mainStr, t.projectName)))
 	errWrapper(t.createFile("", "go.mod", t.modInit()))
 	errWrapper(t.createFile("controllers", "controller.go", controllerStr))
 	errWrapper(t.createFile("routers", "router.go", routerStr))
